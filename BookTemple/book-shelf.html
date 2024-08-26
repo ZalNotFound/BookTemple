@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Étagère à livres</title>
+</head>    
+<body>
+    <form method="GET" action="book-shelf.php" id="idForm" name="shelf_page">
+        <p><label for="book-search">Un livre en particulier ? </label></p>
+        <p><input type="search" id="book-search" name="book-search" placeholder="Entrez le titre du livre..."/>
+        
+        <select name="column-param" form="idForm" id="column-param">
+            <option value="" selected disabled hidden>Choix de tri</option>
+            <option value="title">Titre</option>
+            <option value="publication_date">Date de publication</option>
+            <option value="author_name">Nom d'auteur</option>
+        </select>
+
+        <select name="order-param" form="idForm" size="1"
+        id="order-param">
+            <option value='' selected disabled hidden>Ordre</option>
+            <option value='ASC'>Croissant</option>
+            <option value='DESC'>Décroissant</option>
+        </select>
+        
+        <button>Recherche</button></p>
+    </form>
+
+</body>
+</html>
