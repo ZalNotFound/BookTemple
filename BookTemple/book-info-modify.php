@@ -66,7 +66,7 @@ catch(Exception $pe){
 
 
        <!--ISBN-->
-        <p><label for="isbn_book"><strong>ISBN :</strong></label> <input type="tel" id="isbn_user" name="isbn" pattern="[0-9]{3}[0-9]{1}[0-9]{4}[0-9]{4}[0-9]{1}"  placeholder="<?php echo htmlspecialchars($book["isbn13"])?>"></p>
+        <p><label for="isbn_book"><strong>ISBN :</strong></label> <input type="tel" id="isbn_user" name="isbn" pattern="[0-9]{3}[0-9]{1}[0-9]{4}[0-9]{4}[0-9]{1}"  placeholder="<?php echo htmlspecialchars($book["isbn13"])?>" required></p>
 
 
        <!--Validation-->
