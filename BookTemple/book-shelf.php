@@ -1,6 +1,6 @@
 <?php
 
-require 'C:\wamp64\www\Exercices\PHP_MySQL\utils\session-start.php';
+require_once "C:\wamp64\www\Exercices\PHP_MySQL\utils\session-start.php";
 
 
 if(!isset($_SESSION['userlogin']) || empty($_SESSION['userlogin'])){
@@ -82,7 +82,7 @@ catch(Exception $pe){
     echo 'ERREUR : '.$pe->getMessage();
 }
 
-//require 'C:\wamp64\www\Exercices\PHP_MySQL\utils\session-stop.php';
+//require_once "C:\wamp64\www\Exercices\PHP_MySQL\utils\session-stop.php";
 
 
 ?>

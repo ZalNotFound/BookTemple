@@ -1,6 +1,6 @@
 <?php
 
-require 'C:\wamp64\www\Exercices\PHP_MySQL\utils\session-start.php';
+require_once "C:\wamp64\www\Exercices\PHP_MySQL\utils\session-start.php";
 
 ?>
 
@@ -18,7 +18,7 @@ require 'C:\wamp64\www\Exercices\PHP_MySQL\utils\session-start.php';
 <!--------------->
 
 <?php
-require 'C:\wamp64\www\Exercices\PHP_MySQL\utils\pdo-config.php';
+require_once "C:\wamp64\www\Exercices\PHP_MySQL\utils\pdo-config.php";
 
 $userLogin = (string) $_POST['user_email'];
 $userPassword = (string) $_POST['user_password'];
@@ -72,7 +72,7 @@ try{
         else {
             echo '<p>Mot de passe incorrect.</p>';
             
-            require 'C:\wamp64\www\Exercices\PHP_MySQL\utils\session-stop.php';
+            require_once "C:\wamp64\www\Exercices\PHP_MySQL\utils\session-stop.php";
         }
     }
 
@@ -82,7 +82,7 @@ try{
         echo '<p><b>Redirection...</b></p>';
         echo '<meta http-equiv="refresh" content="3; url=new-user.php">';
 
-        require 'C:\wamp64\www\Exercices\PHP_MySQL\utils\session-stop.php';
+        require_once "C:\wamp64\www\Exercices\PHP_MySQL\utils\session-stop.php";
         
         die();
 

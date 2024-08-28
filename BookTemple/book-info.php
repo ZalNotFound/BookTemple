@@ -44,7 +44,7 @@ try {
 
         -- New ISBN
          CASE
-            WHEN isbn13 LIKE "%-TRIAL-%" THEN "<em>invalide</em>"
+            WHEN isbn13 LIKE "%-TRIAL-%" THEN "invalide"
             ELSE isbn13
          END AS isbn13,
 
@@ -110,7 +110,16 @@ try {
         // Pages number
         echo '<p><strong>Nombre de pages :</strong> ' . $book["num_pages"] . '</p>';
         // ISBN
-        echo '<p><strong>ISBN :</strong> <i>' . $book["isbn13"] . '</i></p>';
+        if (strstr($book["isbn13"], "invalid")) {
+            $_SESSION['book'] = $book;
+
+            echo '<p><strong>ISBN :</strong> <i>' . $book["isbn13"] . "</i>\t<button><a href='book-info-modify.php?id=$idBook'>\u{1F58A}</a></button></p>";
+
+        }
+        else {
+            echo '<p><strong>ISBN :</strong> <i>' . $book["isbn13"] . '</i></p>';
+        }
+
         // Add new book info
     } 
     else {
