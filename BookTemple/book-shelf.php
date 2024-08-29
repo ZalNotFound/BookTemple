@@ -13,7 +13,7 @@ try {
 
     $PDO = pdoConfig($db_name='bookstore', $con_echo=false);
 
-    include 'book-shelf.html';
+    //include 'book-shelf.html';
 
 
     $validColumns = ['title', 'author', 'year']; // Valid column name list
@@ -55,7 +55,7 @@ try {
          AS id FROM book
          WHERE LOWER(title) LIKE LOWER(:searchTerm)
          ORDER BY '.$columnSort.' '.$orderSort.'
-         LIMIT 100');
+         LIMIT 25');
 
     $searchQuery->bindValue(':searchTerm', '%'.$searchTerm.'%');
 
@@ -73,6 +73,7 @@ try {
         
     }
 
+    echo "\t<button><a style='color:black;text-decoration:none' href='book-add.html'>\u{2795} Ajouter un livre</a></button></p>";
 
 }
 

@@ -113,7 +113,7 @@ try {
         if (strstr($book["isbn13"], "invalid")) {
             $_SESSION['book'] = $book;
 
-            echo '<p><strong>ISBN :</strong> <i>' . $book["isbn13"] . "</i>\t<button><a href='book-info-modify.php?id=$idBook'>\u{1F58A}</a></button></p>";
+            echo '<p><strong>ISBN :</strong> <i>' . $book["isbn13"] . "</i>\t<button><a style='color:black; text-decoration:none' href='book-info-modify.php?id=$idBook'>\u{1F58A}</a></button></p>";
 
         }
         else {

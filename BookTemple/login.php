@@ -12,9 +12,7 @@ require_once "C:\wamp64\www\Exercices\PHP_MySQL\utils\session-start.php";
     <title>"Connexion..."</title>
 </head>
 <body>
-    <p><a href="login.html">&laquo; Retour au formulaire</a></p>
-</body>
-</html>
+
 <!--------------->
 
 <?php
@@ -62,7 +60,7 @@ try{
         // All good >> Login //
         if ($realPW == $userPassword){
             echo '<p>Connexion réussie !</p>';
-            echo '<meta http-equiv="refresh" content="2; url=book-shelf.php">';
+            echo '<meta http-equiv="refresh" content="2; url=book-shelf.html">';
 
             $_SESSION['userlogin'] = htmlspecialchars($userLogin);
             session_write_close();
@@ -71,6 +69,7 @@ try{
         // Incorrect password >> Warning //
         else {
             echo '<p>Mot de passe incorrect.</p>';
+            echo '<p><a href="login.html">&laquo; Retour au formulaire</a></p>';
             
             require_once "C:\wamp64\www\Exercices\PHP_MySQL\utils\session-stop.php";
         }
@@ -80,6 +79,7 @@ try{
         // Inexistant user >> Redirection //
         echo '<p>Utilisateur inexistant...</p>';
         echo '<p><b>Redirection...</b></p>';
+        echo '<p><a href="login.html">&laquo; Retour au formulaire</a></p>';
         echo '<meta http-equiv="refresh" content="3; url=new-user.php">';
 
         require_once "C:\wamp64\www\Exercices\PHP_MySQL\utils\session-stop.php";
@@ -99,3 +99,7 @@ catch(PDOException $pe){
 
 
 ?>
+
+
+</body>
+</html>
